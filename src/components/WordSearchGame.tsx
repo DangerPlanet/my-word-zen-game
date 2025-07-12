@@ -750,7 +750,7 @@ const WordSearchGame = () => {
                       className={`
                         aspect-square bg-white border border-gray-300 rounded-lg flex items-center justify-center
                         text-xl sm:text-2xl font-bold cursor-pointer transition-all duration-200
-                        ${isSelected ? 'bg-green-200 scale-110' : ''}
+                        ${isSelected ? 'bg-blue-200 border-blue-400 shadow-md scale-110' : ''}
                         ${animationClass === 'found' ? 'bg-green-500 text-white' : ''}
                         ${animationClass === 'found-animating' ? 'bg-yellow-300 text-gray-900 animate-pulse' : ''}
                         ${animationClass === 'incorrect-selection' ? 'bg-red-400 text-white' : ''}
