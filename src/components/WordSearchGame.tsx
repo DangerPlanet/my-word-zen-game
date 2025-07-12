@@ -744,17 +744,17 @@ const WordSearchGame = () => {
 
                   return (
                     <div
-                      key={`${rowIndex}-${colIndex}`} // Unique key for React list rendering
-                      data-row={rowIndex} // Custom data attributes for touch event targeting
+                      key={`${rowIndex}-${colIndex}`}
+                      data-row={rowIndex}
                       data-col={colIndex}
                       className={`
-                        aspect-square bg-gray-100 rounded-lg flex items-center justify-center
+                        aspect-square bg-white border border-gray-300 rounded-lg flex items-center justify-center
                         text-xl sm:text-2xl font-bold cursor-pointer transition-all duration-200
-                        ${isSelected ? 'bg-green-200 scale-110' : ''} {/* Highlight for current selection */}
-                        ${animationClass === 'found' ? 'bg-green-500 text-white' : ''} {/* Persistent highlight for found words */}
-                        ${animationClass === 'found-animating' ? 'bg-yellow-300 text-gray-900 animate-pulse' : ''} {/* Sparkle/pulse animation on found */}
-                        ${animationClass === 'incorrect-selection' ? 'bg-red-400 text-white' : ''} {/* Brief red flash for incorrect */}
-                        ${!animationClass && !isSelected ? 'text-gray-800 hover:bg-gray-200 active:scale-95' : ''} {/* Default state */}
+                        ${isSelected ? 'bg-green-200 scale-110' : ''}
+                        ${animationClass === 'found' ? 'bg-green-500 text-white' : ''}
+                        ${animationClass === 'found-animating' ? 'bg-yellow-300 text-gray-900 animate-pulse' : ''}
+                        ${animationClass === 'incorrect-selection' ? 'bg-red-400 text-white' : ''}
+                        ${!animationClass && !isSelected ? 'text-gray-800 hover:bg-gray-200 active:scale-95' : ''}
                       `}
                       onMouseDown={() => handleCellMouseDown(rowIndex, colIndex)}
                       onMouseMove={() => handleCellMouseMove(rowIndex, colIndex)}
@@ -780,12 +780,15 @@ const WordSearchGame = () => {
                   className={`
                     px-3 py-1 rounded-full text-sm font-medium transition-all duration-300
                     ${wordObj.found
-                      ? 'bg-green-500 text-white line-through' // Strikethrough for found words
+                      ? 'bg-green-500 text-white line-through'
                       : 'bg-gray-100 text-gray-700'
                     }
                   `}
                 >
-                  {wordObj.word}
+                  {wordObj.found
+                    ? wordObj.word
+                    : '_'.repeat(wordObj.word.length)
+                  }
                 </span>
               ))}
             </div>
