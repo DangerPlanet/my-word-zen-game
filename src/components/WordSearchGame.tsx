@@ -778,16 +778,17 @@ const WordSearchGame = () => {
                 <span
                   key={index}
                   className={`
-                    px-3 py-1 rounded-full text-sm font-medium transition-all duration-300
+                    inline-block min-w-[2.5rem] px-3 py-2 m-1 rounded-lg text-lg font-mono font-semibold text-center
+                    border border-gray-300 transition-all duration-300
                     ${wordObj.found
                       ? 'bg-green-500 text-white line-through'
-                      : 'bg-gray-100 text-gray-700'
+                      : 'bg-white text-gray-800'
                     }
                   `}
                 >
                   {wordObj.found
                     ? wordObj.word
-                    : '_'.repeat(wordObj.word.length)
+                    : Array(wordObj.word.length).fill('●').join(' ')
                   }
                 </span>
               ))}
