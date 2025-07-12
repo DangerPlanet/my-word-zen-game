@@ -1,5 +1,4 @@
 // src/App.tsx
-import React from 'react';
 import WordSearchGame from './components/WordSearchGame'; // Correct path to your new component
 import './App.css'; // Keep this if you want default Vite styling, otherwise remove
 

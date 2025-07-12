@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { RotateCcw, Clock, Leaf, Music, Brain } from 'lucide-react'; // Removed Trophy, Target, Sparkles as they are not directly used as icons in the UI
 
 // Define a type for a sound effect, for better organization
